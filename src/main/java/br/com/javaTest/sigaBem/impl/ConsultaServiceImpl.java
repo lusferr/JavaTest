@@ -28,13 +28,6 @@ public class ConsultaServiceImpl implements ConsultaService{
 		this.ConsultaRepository = ConsultaRepository;
 	}
 	
-//
-//	@Override
-//	public ConsultaResponse buscarPorId(Long id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
 	@Override
 	public ConsultaResponse inserir(ConsultaPayload consultaPayload) {
 		EnderecoResponse enderecoOrigem = viaCepService.consultarCep(consultaPayload.getCepOrigem());
@@ -86,17 +79,7 @@ public class ConsultaServiceImpl implements ConsultaService{
 		return dataPrevista;
 	}
 	
-	@Override
-	public void atualizar(Long id, Consulta Consulta) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deletar(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	
 	
 	

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.javaTest.sigaBem.impl.ConsultaServiceImpl;
 import br.com.javaTest.sigaBem.model.ConsultaResponse;
-import br.com.javaTest.sigaBem.model.entity.Consulta;
 import br.com.javaTest.sigaBem.model.payload.ConsultaPayload;
 
 
