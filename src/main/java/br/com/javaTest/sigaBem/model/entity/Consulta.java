@@ -17,7 +17,6 @@ public class Consulta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
 	private float peso;
 	private String cepOrigem;
 	private String cepDestino;

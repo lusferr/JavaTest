@@ -1,6 +1,5 @@
 package br.com.javaTest.sigaBem.impl;
 
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -21,28 +20,31 @@ public class ConsultaServiceImpl implements ConsultaService{
 	@Autowired
 	private ConsultaRepository ConsultaRepository;
 	
-	@Autowired
 	private ViaCepService viaCepService;
+	
+	@Autowired
+	private void setViaCepService(ViaCepService viaCepService) {
+		this.viaCepService = viaCepService;
+	}
 	
 	public ConsultaServiceImpl(ConsultaRepository ConsultaRepository) {
 		this.ConsultaRepository = ConsultaRepository;
 	}
+	
+	
 	
 	@Override
 	public ConsultaResponse inserir(ConsultaPayload consultaPayload) {
 		EnderecoResponse enderecoOrigem = viaCepService.consultarCep(consultaPayload.getCepOrigem());
 		EnderecoResponse enderecoDestino = viaCepService.consultarCep(consultaPayload.getCepDestino());
 		
-		
 		float valorPorPeso = 1;
-		int entrega = 1;
 		float valor = 0;
-		float desconto = 0;
 		Date dataPrevista = new Date();
 			
 		if(enderecoOrigem.getDdd().equals(enderecoDestino.getDdd())) {
 			valor = (float) (consultaPayload.getPeso() * valorPorPeso * 0.5);
-
+			
 			dataPrevista = addDays(dataPrevista, 1);
 		}
 		
