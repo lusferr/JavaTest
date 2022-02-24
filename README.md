@@ -1,4 +1,3 @@
-# Teste de seleção para vaga de Java
 
 # Sistema desenvolvido - sigaBem
 
